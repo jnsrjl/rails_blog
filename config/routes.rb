@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
   get 'main_pages/home'
 
   get 'main_pages/about'
