@@ -23,14 +23,26 @@
     <![endif]-->
 </head>
 <body>
+<!--Main-wrapper-->
+<div class="container">
 
   <!--Header-->
   <div>
     <h1>Blög</h1>
+
+    <!--Nav-->
+    <nav>
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Signup", register_path %></li>
+      </ul>
+    </nav>
   </div>
 
   <!--Main content-->
   <%= yield %>
+</div>
 
 </body>
 </html>
