@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Workspace</title>
+  <!--Use title from subpage-->
+  <title>Blög | <%= yield(:title) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <!--Protect from CSRF-->
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <!--Header-->
+  <div>
+    <h1>Blög</h1>
+  </div>
+
+  <!--Main content-->
+  <%= yield %>
 
 </body>
 </html>
