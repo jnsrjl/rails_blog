@@ -3,20 +3,22 @@
 <h2>Register</h2>
 <p>Register for a new blog.</p>
 
+<!--Registering form-->
 <div>
   <%= form_for(@user) do |x| %>
+    <!--Name-->
     <%= x.label :name %>
     <%= x.text_field :name %>
-
+    <!--Email-->
     <%= x.label :email %>
     <%= x.email_field :email %>
-
+    <!--Password-->
     <%= x.label :password %>
     <%= x.password_field :password %>
-
+    <!--Confirm password-->
     <%= x.label :password_confirmation %>
     <%= x.password_field :password_confirmation %>
-
+    <!--Submit-->
     <%= x.submit "Register" %>
   <% end %>
 </div>

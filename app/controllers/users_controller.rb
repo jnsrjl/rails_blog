@@ -3,7 +3,31 @@ class UsersController < ApplicationController
 
   end
 
+  # Register form needs a user variable
   def new
     @user = User.new
+  end
+
+  # Submitting register-form calls for creation of a new user
+  def create
+    # Use private method to strongify parameters
+    @user = User.new(user_param_init)
+
+    if @user.save
+      #TODO
+    else
+      render 'new'
+    end
+  end
+
+
+  ## Private area
+
+  private
+
+  # Returns only required and permitted parameters
+  def user_param_init
+    params.require(:user).permit(:name, :email, :password,
+      :password_confirmation)
   end
 end
