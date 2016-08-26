@@ -1,4 +1,22 @@
 <% provide(:title, "Register") %>
 
 <h2>Register</h2>
-<p>Register to get a new blog.</p>
+<p>Register for a new blog.</p>
+
+<div>
+  <%= form_for(@user) do |x| %>
+    <%= x.label :name %>
+    <%= x.text_field :name %>
+
+    <%= x.label :email %>
+    <%= x.email_field :email %>
+
+    <%= x.label :password %>
+    <%= x.password_field :password %>
+
+    <%= x.label :password_confirmation %>
+    <%= x.password_field :password_confirmation %>
+
+    <%= x.submit "Register" %>
+  <% end %>
+</div>
