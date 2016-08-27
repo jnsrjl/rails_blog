@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   # Submitting register-form calls for creation of a new user
   def create
     # Use private method to strongify parameters
-    @user = User.new(user_param_init)
+    @user = User.new(user_strong_params)
 
     if @user.save
       #TODO
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   private
 
   # Returns only required and permitted parameters
-  def user_param_init
+  def user_strong_params
     params.require(:user).permit(:name, :email, :password,
       :password_confirmation)
   end

@@ -20,5 +20,13 @@
     <%= x.password_field :password_confirmation %>
     <!--Submit-->
     <%= x.submit "Register" %>
+
+    <% if @user.errors.any? %>
+      <ul>
+        <% @user.errors.full_messages.each do |x| %>
+          <li><%= x %></li>
+        <% end %>
+      </ul>
+    <% end %>
   <% end %>
 </div>
