@@ -15,8 +15,13 @@ class SessionsController < ApplicationController
 
     # User exists and password is correct
     if user && user.authenticate(password)
+      # Login user
+      create_session user
 
-    # There was invalid data
+      # Show user profile page
+      redirect_to user
+
+    # There were invalid credentials
     else
       render 'new'
     end
