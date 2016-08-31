@@ -5,7 +5,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!--Use title from subpage-->
   <title>Blög | <%= yield(:title) %></title>
 
   <!--Links-->
@@ -23,23 +22,22 @@
     <![endif]-->
 </head>
 <body>
-<!--Main-wrapper-->
-<div class="container">
+  <!--Navbar-->
+  <nav id="navbar-custom" class="navbar navbar-default" role="navigation">
 
-  <!--Header-->
-  <div>
-    <h1>Blög</h1>
+    <!--Site header-->
+    <div class="navbar-header">
+      <%= link_to "Blög", root_path, class:"navbar-brand" %>
+    </div>
 
-    <!--Nav-->
-    <nav>
-      <ul>
-        <li><%= link_to "Home", root_path %></li>
+    <div class="container">
+      <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "About", about_path %></li>
         <li><%= link_to "Register", register_path %></li>
         <li><%= link_to "Login", login_path %></li>
       </ul>
-    </nav>
-  </div>
+    </div>
+  </nav>
 
   <!--Flash message-->
   <% flash.each do |type, msg| %>
@@ -48,8 +46,9 @@
   <% end %>
 
   <!--Main content-->
-  <%= yield %>
-</div>
+  <div class="container">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

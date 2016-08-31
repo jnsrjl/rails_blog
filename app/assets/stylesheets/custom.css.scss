@@ -1,0 +1,20 @@
+$jnspurple: #252839;
+$jnsgray: #677077;
+$jnslight: #b5b5b7;
+$jnsyellow: #f2b632;
+
+/*Navbar*/
+#navbar-custom {
+  background-color: $jnspurple;
+  border-radius: 0;
+  border-width: 0;
+  border-bottom: 5px solid $jnsyellow;
+
+  a {
+    color: $jnslight;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
