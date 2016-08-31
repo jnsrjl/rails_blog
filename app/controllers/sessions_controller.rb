@@ -23,6 +23,10 @@ class SessionsController < ApplicationController
 
     # There were invalid credentials
     else
+      # Show an error message
+      flash.now[:danger] = "You cocked up. Try again."
+
+      # Show login page again
       render 'new'
     end
   end

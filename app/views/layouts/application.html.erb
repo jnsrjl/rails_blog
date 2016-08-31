@@ -41,6 +41,12 @@
     </nav>
   </div>
 
+  <!--Flash message-->
+  <% flash.each do |type, msg| %>
+    <%= content_tag(:div, msg, class:
+      "alert alert-#{type}") %>
+  <% end %>
+
   <!--Main content-->
   <%= yield %>
 </div>
