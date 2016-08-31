@@ -1,17 +1,46 @@
-$jnspurple: #252839;
-$jnsgray: #677077;
-$jnslight: #b5b5b7;
-$jnsyellow: #f2b632;
+$jns-purple: #252839;
+$jns-gray: #677077;
+$jns-light: #b5b5b7;
+$jns-yellow: #f2b632;
+
+/*Hate for rounded edges*/
+* {
+  border-radius: 0 !important;
+}
 
 /*Navbar*/
-#navbar-custom {
-  background-color: $jnspurple;
-  border-radius: 0;
+#jns-navbar {
+  background-color: $jns-purple;
   border-width: 0;
-  border-bottom: 5px solid $jnsyellow;
+  border-bottom: 5px solid $jns-yellow;
 
   a {
-    color: $jnslight;
+    color: $jns-light;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .navbar-header a {
+    color: $jns-yellow;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+/*Form*/
+#jns-form {
+  // Display as stack
+  input {
+    display: block;
+  }
+
+  .btn-default {
+    margin-top: 10px;
+    background-color: $jns-yellow;
 
     &:hover {
       color: #fff;

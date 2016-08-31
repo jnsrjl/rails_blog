@@ -4,7 +4,7 @@
 <p>Register for a new blog.</p>
 
 <!--Registering form-->
-<div>
+<div id="jns-form">
   <%= form_for(@user) do |x| %>
     <!--Name-->
     <%= x.label :name %>
@@ -19,7 +19,7 @@
     <%= x.label :password_confirmation %>
     <%= x.password_field :password_confirmation %>
     <!--Submit-->
-    <%= x.submit "Register" %>
+    <%= x.submit "Register", class: "btn btn-default" %>
 
     <% if @user.errors.any? %>
       <ul>

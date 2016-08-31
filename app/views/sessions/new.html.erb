@@ -3,7 +3,7 @@
 <h2>Login</h2>
 
 <!--Login form-->
-<div>
+<div id="jns-form">
   <%= form_for(:session, url: login_path) do |x| %>
     <!--Email-->
     <%= x.label :email %>
@@ -12,6 +12,6 @@
     <%= x.label :password %>
     <%= x.password_field :password %>
     <!--Submit-->
-    <%= x.submit "Login" %>
+    <%= x.submit "Login", class:"btn btn-default" %>
   <% end %>
 </div>
