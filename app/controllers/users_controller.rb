@@ -15,6 +15,12 @@ class UsersController < ApplicationController
 
     # User parameters passed validations
     if @user.save
+      # Log the user in for convenience
+      create_session(@user)
+
+      # Show a welcome flash
+      flash[:info] = "Hurray! You have successfully created a new blog."
+
       # TEMP : Redirect to profile page for now : later to blog front
       redirect_to @user
 

@@ -22,12 +22,9 @@ $jns-yellow: #f2b632;
     }
   }
 
-  .navbar-header a {
-    color: $jns-yellow;
-
-    &:hover {
-      color: #fff;
-    }
+  .jns-logo {
+    margin-left: 6px;
+    height: 50px;
   }
 }
 

@@ -27,7 +27,10 @@
 
     <!--Site header-->
     <div class="navbar-header">
-      <%= link_to "Blög", root_path, class:"navbar-brand" %>
+      <!--Logo-->
+      <%= link_to root_path do %>
+        <%= image_tag "blog_logo_tiny.png", alt: "Site logo", class: "jns-logo" %>
+      <% end %>
     </div>
 
     <!--Navigation-->
