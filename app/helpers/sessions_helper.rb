@@ -21,4 +21,9 @@ module SessionsHelper
   def current_user_exists?
     !logged_in_user.nil?
   end
+
+  # Destroy current session of user
+  def destroy_session
+    session.delete(:user_id)
+  end
 end

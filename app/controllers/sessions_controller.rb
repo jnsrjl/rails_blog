@@ -32,6 +32,10 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    # Call helper to destroy session
+    destroy_session
 
+    # Redirect to home page
+    redirect_to root_url
   end
 end
