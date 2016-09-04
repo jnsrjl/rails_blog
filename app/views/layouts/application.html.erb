@@ -37,8 +37,9 @@
     <div class="container">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "About", about_path, class: "divide-right" %></li>
-        <% if current_user_exists? %>
-          <li><%= link_to "User", logged_in_user %></li>
+        <% if logged_in_user? %>
+          <li><%= link_to "My Blog", logged_in_user %></li>
+          <li><%= link_to "Edit profile", edit_user_path(logged_in_user) %></li>
           <li><%= link_to "Logout", logout_path, method: "delete" %></li>
         <% else %>
           <li><%= link_to "Register", register_path %></li>

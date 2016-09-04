@@ -1,0 +1,31 @@
+<% provide(:title, "Edit profile") %>
+
+<h2>Edit profile information</h2>
+
+<!--Edit profile -form-->
+<div id="jns-form">
+  <%= form_for(@user) do |x| %>
+    <!--Name-->
+    <%= x.label :name %>
+    <%= x.text_field :name %>
+    <!--Email-->
+    <%= x.label :email %>
+    <%= x.email_field :email %>
+    <!--Password-->
+    <%= x.label :password %>
+    <%= x.password_field :password %>
+    <!--Confirm password-->
+    <%= x.label :password_confirmation %>
+    <%= x.password_field :password_confirmation %>
+    <!--Submit-->
+    <%= x.submit "Save new information", class: "btn btn-default" %>
+
+    <% if @user.errors.any? %>
+      <ul>
+        <% @user.errors.full_messages.each do |x| %>
+          <li><%= x %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+</div>

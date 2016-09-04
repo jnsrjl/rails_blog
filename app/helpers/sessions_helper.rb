@@ -18,7 +18,7 @@ module SessionsHelper
   end
 
   # Return true if user has logged in
-  def current_user_exists?
+  def logged_in_user?
     !logged_in_user.nil?
   end
 
