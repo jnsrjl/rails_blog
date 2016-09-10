@@ -14,7 +14,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-# Front end framework, converted to sass
+# Front end framework, Sassy edition
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 
 # Use jquery as the JavaScript library
@@ -28,6 +28,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+
+# El pagination
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

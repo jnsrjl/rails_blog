@@ -1,4 +1,14 @@
 <% provide(:title, "Home") %>
 
-<h2>Home</h2>
-<p>Welcome to Blög!</p>
+<h2>Welcome to Blög!</h2>
+
+<h2>Users</h2>
+
+<%= will_paginate %>
+<ul>
+  <% @main_pages.each do |x| %>
+    <li>
+      <%= link_to x.name, x %>
+    </li>
+  <% end %>
+</ul>
