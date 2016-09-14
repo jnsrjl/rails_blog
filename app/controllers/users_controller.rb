@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
-  # Check session status if user tries to access user edit or update -actions
-  before_action :check_login_status, only: [:edit, :update, :destroy]
+  # Check session status for certain actions
+  before_action :check_login_status, only: [:show, :index, :edit, :update, :destroy]
 
   # Also check that the user is correct one
-  before_action :check_user_correct, only: [:edit, :update, :destroy]
+  before_action :check_user_correct, only: [:show, :edit, :update, :destroy]
+
+  # Restrict index to admins
+  before_action :check_admin, only: :index
 
   # Show user profile page based on id
   def show
@@ -123,7 +126,7 @@ class UsersController < ApplicationController
 
     # Returns true, if user is with admin status
     def check_admin
-      if !logged_in_user.admin?
+      unless logged_in_user.admin?
         redirect_to(root_url)
       end
     end

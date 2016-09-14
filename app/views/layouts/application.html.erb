@@ -37,9 +37,7 @@
     <div class="container">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "About", about_path %></li>
-        <li><%= link_to "Users", users_path %></li>
         <% if logged_in? %>
-          <li><%= link_to "My Blog", logged_in_user %></li>
           <li><%= link_to "Edit profile", edit_user_path(logged_in_user) %></li>
           <li><%= link_to "Logout", logout_path, method: "delete" %></li>
         <% else %>
@@ -57,7 +55,7 @@
   <% end %>
 
   <!--Main content-->
-  <div class="container">
+  <div id="jns-main" class="container">
     <%= yield %>
   </div>
 
@@ -65,7 +63,8 @@
   <footer id="jns-footer">
     <div class="container">
       <% if logged_in? && logged_in_user.admin? %>
-        <p class="text-danger text-right">You have admin priviledges</p>
+        <p class="text-danger">You have admin priviledges</p>
+        <%= link_to "Index of users", users_path %>
       <% end %>
     </div>
   </footer>

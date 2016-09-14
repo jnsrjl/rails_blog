@@ -8,6 +8,11 @@ $jns-yellow: #f2b632;
   border-radius: 0 !important;
 }
 
+/*Main content*/
+#jns-main {
+  margin-bottom: 80px;
+}
+
 /*Navbar*/
 #jns-navbar {
   background-color: $jns-purple;
@@ -31,10 +36,12 @@ $jns-yellow: #f2b632;
 /*Footer*/
 #jns-footer {
   /*Stick it to the bottom*/
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   background: $jns-purple;
+
+  padding: 5px;
 }
 
 /*Form*/
