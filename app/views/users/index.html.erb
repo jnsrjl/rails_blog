@@ -16,7 +16,8 @@
         </td>
         <td>
           <% if logged_in_user.admin? && !logged_in_user?(x) %>
-            <%= link_to "Murder", x, method: :delete, data: {confirm: "Are you serious?!"} %>
+            <%= link_to "Murder", x, method: :delete,
+                data: {confirm: "Are you serious?!"}, class: "text-danger" %>
           <% end %>
         </td>
       </tr>

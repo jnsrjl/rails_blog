@@ -28,6 +28,15 @@ $jns-yellow: #f2b632;
   }
 }
 
+/*Footer*/
+#jns-footer {
+  /*Stick it to the bottom*/
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: $jns-purple;
+}
+
 /*Form*/
 #jns-form {
   // Display as stack
