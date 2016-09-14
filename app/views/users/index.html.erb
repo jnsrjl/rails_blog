@@ -1,0 +1,25 @@
+<h2>All users</h2>
+
+<%= will_paginate %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |x| %>
+      <tr>
+        <td>
+          <%= link_to x.name, x %>
+        </td>
+        <td>
+          <% if logged_in_user.admin? && !logged_in_user?(x) %>
+            <%= link_to "Murder", x, method: :delete, data: {confirm: "Are you serious?!"} %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

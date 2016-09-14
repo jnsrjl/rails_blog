@@ -18,8 +18,13 @@ module SessionsHelper
   end
 
   # Return true if user has logged in
-  def logged_in_user?
+  def logged_in?
     !logged_in_user.nil?
+  end
+
+  # Return true if param user is logged_in_user
+  def logged_in_user?(current)
+    current == logged_in_user
   end
 
   # Destroy current session of user

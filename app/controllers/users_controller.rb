@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
   # Check session status if user tries to access user edit or update -actions
-  before_action :check_login_status, only: [:edit, :update]
+  before_action :check_login_status, only: [:edit, :update, :delete]
 
   # Also check that the user is correct one
   before_action :check_user_correct, only: [:edit, :update]
+
+  # Restrict murdering to admins
+  before_action :check_admin, only: :destroy
 
   # Show user profile page based on id
   def show
@@ -63,6 +66,30 @@ class UsersController < ApplicationController
     end
   end
 
+  # Show all users with pagination
+  def index
+    # Change from default of 30 items per page to 5
+    @users = User.paginate(page: params[:page], per_page: 5)
+  end
+
+  # Kill a user
+  def destroy
+    # Fetch the right dude
+    sentenced = User.find(params[:id])
+
+    # Save name for message
+    name = sentenced.name
+
+    # Commit murder
+    sentenced.destroy
+
+    # Show message of successful murder
+    flash[:info] = "You successfully murdered " + name
+
+    # Back to index
+    redirect_to users_url
+  end
+
 ##################################PRIVATES######################################
 
   private
@@ -77,7 +104,7 @@ class UsersController < ApplicationController
     # Returns true, if user has created a session
     def check_login_status
       # If user hasn't logged in
-      unless logged_in_user?
+      unless logged_in?
         # Show reminder message
         flash[:info] = "Log in to continue."
 
@@ -95,6 +122,12 @@ class UsersController < ApplicationController
       unless @user == logged_in_user
         redirect_to root_url
       end
+    end
 
+    # Returns true, if user is with admin status
+    def check_admin
+      if !logged_in_user.admin?
+        redirect_to(root_url)
+      end
     end
 end
