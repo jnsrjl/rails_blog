@@ -64,7 +64,7 @@
   <!--Footer-->
   <footer id="jns-footer">
     <div class="container">
-      <% if logged_in_user.admin? %>
+      <% if logged_in? && logged_in_user.admin? %>
         <p class="text-danger text-right">You have admin priviledges</p>
       <% end %>
     </div>

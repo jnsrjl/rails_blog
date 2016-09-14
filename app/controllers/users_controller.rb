@@ -118,8 +118,8 @@ class UsersController < ApplicationController
       # Fetch user by id
       @user = User.find(params[:id])
 
-      # Redirect to home page if wrong user
-      unless @user == logged_in_user
+      # Redirect to home page if wrong user or not admin
+      unless @user == logged_in_user || logged_in_user.admin?
         redirect_to root_url
       end
     end

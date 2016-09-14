@@ -18,8 +18,8 @@ class User < ActiveRecord::Base
   # Activate secure password functionality
   has_secure_password
 
-  # Password: min 8 chars
-  validates :password, length: { minimum: 8 }
+  # Password: min 8 chars, allow nil when editing profile information
+  validates :password, length: { minimum: 8 }, allow_nil: true
 
 
   private

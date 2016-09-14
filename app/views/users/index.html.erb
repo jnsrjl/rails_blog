@@ -5,7 +5,6 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th> </th>
     </tr>
   </thead>
   <tbody>
@@ -14,12 +13,16 @@
         <td>
           <%= link_to x.name, x %>
         </td>
-        <td>
-          <% if logged_in_user.admin? && !logged_in_user?(x) %>
+
+        <% if logged_in? && logged_in_user.admin? && !logged_in_user?(x) %>
+          <td>
             <%= link_to "Murder", x, method: :delete,
                 data: {confirm: "Are you serious?!"}, class: "text-danger" %>
-          <% end %>
-        </td>
+          </td>
+          <td>
+            <%= link_to "Edit", edit_user_path(x), class: "text-warning" %>
+          </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
