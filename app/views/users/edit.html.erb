@@ -11,21 +11,36 @@
     <!--Email-->
     <%= x.label :email %>
     <%= x.email_field :email %>
-    <!--Password-->
-    <%= x.label :password %>
-    <%= x.password_field :password %>
-    <!--Confirm password-->
-    <%= x.label :password_confirmation %>
-    <%= x.password_field :password_confirmation %>
     <!--Submit-->
-    <%= x.submit "Save new information", class: "btn btn-default" %>
-
-    <% if @user.errors.any? %>
-      <ul>
-        <% @user.errors.full_messages.each do |x| %>
-          <li><%= x %></li>
-        <% end %>
-      </ul>
-    <% end %>
+    <%= x.submit "Save new info", class: "btn btn-default" %>
   <% end %>
+
+  <hr>
+
+  <%= form_for(@user) do |y| %>
+    <!--Password-->
+    <%= y.label :password %>
+    <%= y.password_field :password %>
+    <!--Confirm password-->
+    <%= y.label :password_confirmation %>
+    <%= y.password_field :password_confirmation %>
+    <!--Submit-->
+    <%= y.submit "Change password", class: "btn btn-default" %>
+  <% end %>
+
+  <% if @user.errors.any? %>
+    <ul>
+      <% @user.errors.full_messages.each do |x| %>
+        <li><%= x %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <hr>
+
+  <div id="jns-zone" class="bg-danger">
+    <%= link_to "Delete profile", @user, method: :delete,
+      data: {confirm: "Are you sure?!"}, class: "btn btn-danger" %>
+  </div>
+
 </div>

@@ -47,9 +47,15 @@ $jns-yellow: #f2b632;
   .btn-default {
     margin-top: 10px;
     background-color: $jns-yellow;
+    color: white;
 
     &:hover {
-      color: #fff;
+      background: darken($jns-yellow, 10%);
     }
   }
+}
+
+/*Zone*/
+#jns-zone {
+  padding: 10px;
 }

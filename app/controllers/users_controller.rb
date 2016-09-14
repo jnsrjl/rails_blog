@@ -1,12 +1,9 @@
 class UsersController < ApplicationController
   # Check session status if user tries to access user edit or update -actions
-  before_action :check_login_status, only: [:edit, :update, :delete]
+  before_action :check_login_status, only: [:edit, :update, :destroy]
 
   # Also check that the user is correct one
-  before_action :check_user_correct, only: [:edit, :update]
-
-  # Restrict murdering to admins
-  before_action :check_admin, only: :destroy
+  before_action :check_user_correct, only: [:edit, :update, :destroy]
 
   # Show user profile page based on id
   def show
