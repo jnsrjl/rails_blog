@@ -1,0 +1,5 @@
+<!--User's blog-->
+<div>
+  <h2><%= @blog.name %></h2>
+  <p><%= @user.name %> created this blog <%= time_ago_in_words(@blog.created_at) %> ago</p>
+</div>

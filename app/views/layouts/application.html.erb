@@ -38,6 +38,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "About", about_path %></li>
         <% if logged_in? %>
+          <li><%= link_to "My blog", blog_path(logged_in_user.blog) %></li>
           <li><%= link_to "Edit profile", edit_user_path(logged_in_user) %></li>
           <li><%= link_to "Logout", logout_path, method: "delete" %></li>
         <% else %>

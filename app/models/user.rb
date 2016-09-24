@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  # User may have one blog
-  has_one :blog
+  # User may have one blog which dies with him
+  has_one :blog, dependent: :destroy
 
   # Store emails downcased
   before_save :email_downcase
