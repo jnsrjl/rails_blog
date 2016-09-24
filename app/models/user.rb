@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  # User may have one blog
+  has_one :blog
+
   # Store emails downcased
   before_save :email_downcase
 
