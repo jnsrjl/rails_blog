@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+# Filters
+
   # Check session status for certain actions
   before_action :check_login_status, only: [:show, :index, :edit, :update, :destroy]
 
@@ -7,6 +10,8 @@ class UsersController < ApplicationController
 
   # Restrict index to admins
   before_action :check_admin, only: :index
+
+# Actions
 
   # Show user profile page based on id
   def show
@@ -90,7 +95,7 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
-##################################PRIVATES######################################
+# Privates
 
   private
 
@@ -99,29 +104,6 @@ class UsersController < ApplicationController
     def user_strong_params
       params.require(:user).permit(:name, :email, :password,
         :password_confirmation)
-    end
-
-    # Returns true, if user has created a session
-    def check_login_status
-      # If user hasn't logged in
-      unless logged_in?
-        # Show reminder message
-        flash[:info] = "Log in to continue."
-
-        # Redirect user to login page
-        redirect_to login_url
-      end
-    end
-
-    # Returns true, if user is the same as the user being accessed
-    def check_user_correct
-      # Fetch user by id
-      @user = User.find(params[:id])
-
-      # Redirect to home page if wrong user or not admin
-      unless @user == logged_in_user || logged_in_user.admin?
-        redirect_to root_url
-      end
     end
 
     # Returns true, if user is with admin status
