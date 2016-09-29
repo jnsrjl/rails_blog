@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
 
-# Filters
+## Filters
 
   # Check session status for certain actions
   before_action :check_login_status, only: [:edit, :update]
@@ -9,7 +9,7 @@ class BlogsController < ApplicationController
   before_action :check_blog_user, only: [:edit, :update]
 
 
-# Actions
+## Actions
 
   # Show blog based on id
   def show
@@ -50,7 +50,7 @@ class BlogsController < ApplicationController
   end
 
 
-# Privates
+## Privates
 
   private
 

@@ -6,11 +6,13 @@ class Post < ActiveRecord::Base
 
 
 ## Scope
+
   # Return posts by creation date, first first
   default_scope -> {order(created_at: :desc)}
 
 
 ## Validations
+
   # Post has always a blog parent
   validates :blog_id, presence: true
 
