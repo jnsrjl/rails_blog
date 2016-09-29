@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  # User may have one blog which dies with him
+  # User gets killed -> blog dies -> posts die #natural_selection
   has_one :blog, dependent: :destroy
 
   # Store emails downcased
