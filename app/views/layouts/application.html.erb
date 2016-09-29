@@ -37,6 +37,7 @@
     <div class="container">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Blogs", blogs_path %></li>
         <% if logged_in? %>
           <li><%= link_to "My Blog", blog_path(myblog) %></li>
           <li><%= link_to "Edit profile", edit_user_path(logged_in_user) %></li>

@@ -1,0 +1,27 @@
+<h2>All blogs</h2>
+
+<%= will_paginate %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Blog name</th>
+      <th>User name</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @blogs.each do |x| %>
+      <tr>
+        <td>
+          <%= link_to x.name, x %>
+        </td>
+        <td>
+          <%= link_to x.user.name, x.user %>
+        </td>
+        <td>
+          <%= time_ago_in_words(x.created_at) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

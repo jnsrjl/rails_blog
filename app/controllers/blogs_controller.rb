@@ -17,4 +17,10 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
     @user = @blog.user
   end
+
+  # Show all blogs with pagination
+  def index
+    # Change from default of 30 items per page to 5
+    @blogs = Blog.paginate(page: params[:page], per_page: 5)
+  end
 end
