@@ -31,4 +31,9 @@ module SessionsHelper
   def destroy_session
     session.delete(:user_id)
   end
+
+  # Return logged in user's blog
+  def myblog
+    logged_in_user.blog
+  end
 end

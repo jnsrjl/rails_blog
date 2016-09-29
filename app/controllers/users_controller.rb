@@ -30,6 +30,9 @@ class UsersController < ApplicationController
 
     # User parameters passed validations
     if @user.save
+      # Create a blog stub for the user
+      @user.create_blog(name: "My Blog")
+
       # Log the user in for convenience
       create_session(@user)
 

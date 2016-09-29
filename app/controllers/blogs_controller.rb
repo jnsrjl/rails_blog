@@ -6,7 +6,7 @@ class BlogsController < ApplicationController
   before_action :check_login_status, only: [:new, :create, :edit, :update, :destroy]
 
   # Also check that the user is correct one
-  before_action :check_user_correct, only: [:new, :create, :edit, :update, :destroy]
+  before_action :check_user_correct, only: [:create, :update, :destroy]
 
 
 # Actions
@@ -17,10 +17,4 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
     @user = @blog.user
   end
-
-  # Register form needs a blog object linked to user
-  def new
-    @blog = logged_in_user.build_blog
-  end
-
 end
