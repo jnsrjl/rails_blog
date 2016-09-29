@@ -1,0 +1,13 @@
+<% provide(:title, "Edit my blog") %>
+
+<h2>Edit my blog's details</h2>
+
+<div id="jns-form">
+  <%= form_for(@blog) do |x| %>
+    <!--Name-->
+    <%= x.label :name %>
+    <%= x.text_field :name %>
+    <!--Submit-->
+    <%= x.submit "Update details", class: "btn btn-default" %>
+  <% end %>
+</div>

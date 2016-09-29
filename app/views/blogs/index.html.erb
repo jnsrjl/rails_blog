@@ -4,8 +4,8 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Blog name</th>
-      <th>User name</th>
+      <th>Blog</th>
+      <th>User</th>
       <th>Age</th>
     </tr>
   </thead>
@@ -16,7 +16,7 @@
           <%= link_to x.name, x %>
         </td>
         <td>
-          <%= link_to x.user.name, x.user %>
+          <%= x.user.name %>
         </td>
         <td>
           <%= time_ago_in_words(x.created_at) %>

@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   before_action :check_login_status, only: [:show, :index, :edit, :update, :destroy]
 
   # Also check that the user is correct one
-  before_action :check_user_correct, only: [:edit, :update, :destroy]
+  before_action :check_user_correct, only: [:show, :edit, :update, :destroy]
 
   # Restrict index to admins
   before_action :check_admin, only: :index
