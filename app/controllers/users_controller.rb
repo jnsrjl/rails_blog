@@ -68,7 +68,7 @@ class UsersController < ApplicationController
       # Redirect to profile page
       redirect_to @user
 
-    # Some aprameters didn't pass
+    # Some parameters didn't pass
     else
       # Render edit page with error messages attached to @user
       render 'edit'

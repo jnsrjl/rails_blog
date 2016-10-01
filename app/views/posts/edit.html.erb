@@ -1,0 +1,34 @@
+<% provide(:title, "Edit a blog post") %>
+
+<h2>Edit your blog post</h2>
+
+<!--Edit blog post form-->
+<div id="jns-form">
+  <%= form_for(@post) do |x| %>
+    <!--Title-->
+    <%= x.label :title %>
+    <%= x.text_field :title %>
+    <!--Content-->
+    <%= x.label :content %>
+    <%= x.text_area :content, class: "form-control", rows: "10" %>
+    <!--Submit-->
+    <%= x.submit "Update post", class: "btn btn-default" %>
+  <% end %>
+
+  <% if @post.errors.any? %>
+    <!--Form errors-->
+    <ul>
+      <% @post.errors.full_messages.each do |x| %>
+        <li><%= x %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <hr>
+
+  <!--Delete blog post-->
+  <div id="jns-zone" class="bg-danger">
+    <%= link_to "Delete post", @post, method: :delete,
+      data: {confirm: "Are you sure?!"}, class: "btn btn-danger" %>
+  </div>
+</div>

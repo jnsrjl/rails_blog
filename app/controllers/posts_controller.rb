@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 # Filters
 
   before_action :check_login_status, except: [:show, :index]
-  before_action :check_post_user, only: [:edit, :update, :delete]
+  before_action :check_post_user, only: [:edit, :update, :destroy]
 
 # Actions
 
@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  # Try to save the new post
+  # Try to create a new post
   def create
     # Associate with logged in user and use strong parameters
     @post = logged_in_user.blog.posts.build(post_strong_params)
@@ -36,6 +36,50 @@ class PostsController < ApplicationController
       # Render new with error messages attached to @post
       render 'new'
     end
+  end
+
+  # Show edit page based on url id
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  # Try to update post data based on edit-form
+  def update
+    # Get post from db
+    @post = Post.find(params[:id])
+
+    # Post parameters passed validations
+    if @post.update_attributes(post_strong_params)
+      # Show message to indicate success
+      flash[:info] = "Post edit was successful"
+
+      # Redirect to post page
+      redirect_to @post
+
+    # Some parameters didn't pass
+    else
+      # Render edit page with error messages attached to @post
+      render 'edit'
+    end
+  end
+
+  # Kill a blog post
+  def destroy
+    # Fetch the right post
+    sentenced = Post.find(params[:id])
+
+    # Save title for message and blog for redirect
+    title = sentenced.title
+    blog = sentenced.blog
+
+    # Commit murder
+    sentenced.destroy
+
+    # Show message of successful murder
+    flash[:info] = "You successfully destroyed blog post: " + title
+
+    # Back to index
+    redirect_to blog_path(blog)
   end
 
 
