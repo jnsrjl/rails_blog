@@ -1,0 +1,25 @@
+<% provide(:title, "Create a new post") %>
+
+<h2>Post a new entry</h2>
+
+<!--Blog post form-->
+<div id="jns-form">
+  <%= form_for(@post) do |x| %>
+    <!--Name-->
+    <%= x.label :title %>
+    <%= x.text_field :title %>
+    <!--Content-->
+    <%= x.label :content %>
+    <%= x.text_area :content, class: "form-control", rows: "10" %>
+    <!--Submit-->
+    <%= x.submit "Post", class: "btn btn-default" %>
+
+    <% if @post.errors.any? %>
+      <ul>
+        <% @post.errors.full_messages.each do |x| %>
+          <li><%= x %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+</div>

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 # Filters
 
   # Check session status for certain actions
-  before_action :check_login_status, only: [:show, :index, :edit, :update, :destroy]
+  before_action :check_login_status, except: [:new, :create]
 
   # Also check that the user is correct one
   before_action :check_user_correct, only: [:show, :edit, :update, :destroy]

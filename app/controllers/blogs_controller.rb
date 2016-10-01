@@ -60,6 +60,7 @@ class BlogsController < ApplicationController
       params.require(:blog).permit(:name)
     end
 
+    # Return true if blog owner and accessing user match
     def check_blog_user
       # Fetch blog by id
       @blog = Blog.find(params[:id])
