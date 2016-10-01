@@ -16,11 +16,11 @@
 
         <% if logged_in? && logged_in_user.admin? && !logged_in_user?(x) %>
           <td>
-            <%= link_to "Murder", x, method: :delete,
-                data: {confirm: "Are you serious?!"}, class: "text-danger" %>
+            <%= link_to "Edit", edit_user_path(x), class: "text-warning" %>
           </td>
           <td>
-            <%= link_to "Edit", edit_user_path(x), class: "text-warning" %>
+            <%= link_to "Murder", x, method: :delete,
+                data: {confirm: "Are you serious?!"}, class: "text-danger" %>
           </td>
         <% end %>
       </tr>

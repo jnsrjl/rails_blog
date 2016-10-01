@@ -1,6 +1,9 @@
 <!--User information-->
 <div>
-  <h2>Profile of <%= @user.name %></h2>
+  <h2>
+    Profile of <%= @user.name %>
+    <%= link_to "Edit profile", edit_user_path, class: "btn btn-warning btn-xs" %>
+  </h2>
   <p><%= @user.name %> joined Blög <%= time_ago_in_words(@user.created_at) %> ago</p>
   <p><%= @user.name %> has a blog called <%= link_to @blog.name, @blog %></p>
 </div>
