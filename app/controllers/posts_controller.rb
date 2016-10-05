@@ -82,6 +82,11 @@ class PostsController < ApplicationController
     redirect_to blog_path(blog)
   end
 
+  # Show all blog posts with pagination
+  def index
+    @posts = Post.paginate(page: params[:page])
+  end
+
 
 # Privates
 

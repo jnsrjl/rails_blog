@@ -16,6 +16,7 @@ class BlogsController < ApplicationController
     # Fetch from db by url id
     @blog = Blog.find(params[:id])
     @user = @blog.user
+    @posts = @blog.posts.paginate(page: params[:page], per_page: 3)
   end
 
   # Show all blogs with pagination
