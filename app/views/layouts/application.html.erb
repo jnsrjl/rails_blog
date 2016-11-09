@@ -38,7 +38,11 @@
         <li><%= link_to "About", about_path %></li>
         <li><%= link_to "Blogs", blogs_path %></li>
         <% if logged_in? %>
-          <li><%= link_to "Post new", new_post_path %></li>
+          <li>
+            <%= link_to new_post_path do %>
+              New Post <span class="glyphicon glyphicon-plus"></span>
+            <% end %>
+          </li>
           <li><%= link_to "My Blog", blog_path(myblog) %></li>
           <li><%= link_to "My profile", user_path(logged_in_user) %></li>
           <li><%= link_to "Logout", logout_path, method: "delete" %></li>

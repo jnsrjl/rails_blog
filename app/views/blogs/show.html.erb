@@ -20,7 +20,7 @@
           <%= link_to "Edit post", edit_post_path(x), class: "btn btn-warning btn-sm" %>
         <% end %>
       </h2>
-      <%= content_tag(:p, x.content) %>
+      <%= content_tag(:p, simple_format(x.content)) %>
     </article>
   <% end %>
   <%= will_paginate @posts %>
