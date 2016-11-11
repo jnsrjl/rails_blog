@@ -1,3 +1,4 @@
+<%= tinymce_assets %>
 <% provide(:title, "Edit a blog post") %>
 
 <h2>Edit your blog post</h2>
@@ -10,7 +11,7 @@
     <%= x.text_field :title %>
     <!--Content-->
     <%= x.label :content %>
-    <%= x.text_area :content, class: "form-control", rows: "10" %>
+    <%= x.text_area :content, class: "tinymce" %>
     <!--Submit-->
     <%= x.submit "Update post", class: "btn btn-default" %>
   <% end %>
@@ -32,3 +33,5 @@
       data: {confirm: "Are you sure?!"}, class: "btn btn-danger" %>
   </div>
 </div>
+
+<%= tinymce %>

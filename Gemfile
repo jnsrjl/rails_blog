@@ -39,8 +39,11 @@ gem 'bootstrap-will_paginate'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Use CarrierWave for file (image) uploda
+# Use CarrierWave for file (image) upload
 gem 'carrierwave'
+
+# Use TinyMCE for WYSIWYG-editor
+gem 'tinymce-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,18 +1,24 @@
 <!--User's blog-->
 <div>
-  <h1>
+  <h1 id="jns-heading">
     <%= @blog.name %>
     <% if logged_in? && logged_in_user?(@user) %>
       <%= link_to "Edit my blog", edit_blog_path(@blog), class: "btn btn-warning btn-sm" %>
     <% end %>
   </h1>
   <p>by <%= link_to @user.name, user_path(@user) %></p>
-  <hr>
+
+  <% if logged_in? && logged_in_user?(@user) %>
+    <!--New post-->
+    <hr>
+    <%= link_to "Create a new post", new_post_path, class: "btn btn-warning btn-xl" %>
+  <% end %>
 </div>
 
 <!--Blog posts-->
 <div>
   <% @posts.each do |x| %>
+    <hr>
     <article>
       <h2>
         <%= x.title %>
@@ -20,6 +26,7 @@
           <%= link_to "Edit post", edit_post_path(x), class: "btn btn-warning btn-sm" %>
         <% end %>
       </h2>
+      <%= content_tag(:em, x.created_at.to_date.strftime("%d %b %Y") , class: "text-warning") %>
       <%= content_tag(:p, simple_format(x.content)) %>
     </article>
   <% end %>

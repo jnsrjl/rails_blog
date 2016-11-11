@@ -11,7 +11,12 @@
     <% end %>
   </h2>
 
+  <!--Created at-->
+  <%= content_tag(:em, @post.created_at.to_date.strftime("%d %b %Y") , class: "text-warning") %>
+
+  <!--Link to user-->
   <p>by <%= link_to @user.name, user_path(@user) %></p>
+
   <!--Post content-->
   <p><%= simple_format(@post.content) %></p>
 </div>

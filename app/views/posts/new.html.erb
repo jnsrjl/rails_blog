@@ -1,3 +1,4 @@
+<%= tinymce_assets %>
 <% provide(:title, "Create a new post") %>
 
 <h2>Post a new entry</h2>
@@ -10,7 +11,7 @@
     <%= x.text_field :title %>
     <!--Content-->
     <%= x.label :content %>
-    <%= x.text_area :content, class: "form-control", rows: "10" %>
+    <%= x.text_area :content, class: "tinymce" %>
     <!--Submit-->
     <%= x.submit "Post", class: "btn btn-default" %>
 
@@ -23,3 +24,5 @@
     <% end %>
   <% end %>
 </div>
+
+<%= tinymce %>
