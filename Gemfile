@@ -42,6 +42,9 @@ gem 'bootstrap-will_paginate'
 # Use CarrierWave for file (image) upload
 gem 'carrierwave'
 
+# Use Minimagick to manipulate uploaded images
+gem 'mini_magick'
+
 # Use TinyMCE for WYSIWYG-editor
 gem 'tinymce-rails'
 

@@ -51,6 +51,10 @@ $jns-yellow: #f2b632;
     display: block;
   }
 
+  label {
+    margin: 10px 0;
+  }
+
   .btn-default {
     margin-top: 10px;
     background-color: $jns-yellow;

@@ -17,6 +17,11 @@
   <!--Link to user-->
   <p>by <%= link_to @user.name, user_path(@user) %></p>
 
+  <% if @post.image? %>
+    <!--Image-->
+    <%= image_tag @post.image.url %>
+  <% end %>
+
   <!--Post content-->
   <p><%= simple_format(@post.content) %></p>
 </div>

@@ -95,7 +95,7 @@ class PostsController < ApplicationController
     # Protect against form mass assignment
     # Returns only required and permitted parameters
     def post_strong_params
-      params.require(:post).permit(:title, :content)
+      params.require(:post).permit(:title, :content, :image)
     end
 
     # Return true if post owner and accessing user match

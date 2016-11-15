@@ -12,6 +12,9 @@
     <!--Content-->
     <%= x.label :content %>
     <%= x.text_area :content, class: "tinymce" %>
+    <!--Image-->
+    <%= x.label :image %>
+    <%= x.file_field :image %>
     <!--Submit-->
     <%= x.submit "Post", class: "btn btn-default" %>
 

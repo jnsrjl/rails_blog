@@ -10,6 +10,9 @@ class Post < ActiveRecord::Base
   # Return posts by creation date, first first
   default_scope -> {order(created_at: :desc)}
 
+  # Add CarrierWave uploader for images
+  mount_uploader :image, PostimageUploader
+
 
 ## Validations
 
