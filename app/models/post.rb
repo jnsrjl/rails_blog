@@ -23,4 +23,19 @@ class Post < ActiveRecord::Base
   validates :title, presence: true, length: { maximum: 50 }
   validates :content, presence: true, length: { maximum: 5000 }
 
+  # Image size shouldn't be too much
+  validate :image_size
+
+
+## Private sector
+
+  private
+
+    # Add error if image size over 3MB
+    def image_size
+      if image.size > 3.megabytes
+        errors.add(:image, "image too heavy (3MB max)")
+      end
+    end
+
 end

@@ -14,7 +14,7 @@
     <%= x.text_area :content, class: "tinymce" %>
     <!--Image-->
     <%= x.label :image %>
-    <%= x.file_field :image %>
+    <%= x.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
     <!--Submit-->
     <%= x.submit "Post", class: "btn btn-default" %>
 
