@@ -8,8 +8,8 @@
   <title>Blög | <%= yield(:title) %></title>
 
   <!--Links-->
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
 
   <!--Protect from CSRF-->
   <%= csrf_meta_tags %>

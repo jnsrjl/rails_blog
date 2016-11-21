@@ -21,7 +21,7 @@
     <hr>
     <article>
       <h2>
-        <%= x.title %>
+        <%= link_to x.title, post_path(x) %>
         <% if logged_in? && logged_in_user?(@user) %>
           <%= link_to "Edit post", edit_post_path(x), class: "btn btn-warning btn-sm" %>
         <% end %>
