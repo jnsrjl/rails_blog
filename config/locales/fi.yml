@@ -1,0 +1,8 @@
+# Finnish locale
+
+fi:
+  about-title: "Tietoja"
+  about-body: "Blög on pieni bloggaussivusto. Anna mennä: luo tunnus ja ala kirjoittaa."
+  about-note: "Tällä sivulla käytetään lokalisointia."
+  about-translate: "Käännä englanniksi"
+  about-locale: "en"

@@ -6,9 +6,19 @@ class ApplicationController < ActionController::Base
   # Use these methods across the whole app
   include SessionsHelper
 
+  # Set locale
+  # Help from:
+  # http://guides.rubyonrails.org/i18n.html
+  before_action :set_locale
+
 # Privates
 
   private
+
+    # Sets locale based on params or default
+    def set_locale
+      I18n.locale = params[:locale] || I18n.default_locale
+    end
 
     # Returns true, if user has created a session
     def check_login_status

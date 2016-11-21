@@ -20,4 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  about-title: "About"
+  about-body: "Blög is a tiny blog hosting site. Go ahead and create an account and start posting."
+  about-note: "This page has internationalization enabled."
+  about-translate: "Translate to Finnish"
+  about-locale: "fi"

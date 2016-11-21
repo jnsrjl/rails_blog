@@ -1,4 +1,6 @@
-<% provide(:title, "About") %>
+<% provide(:title, t('about-title')) %>
 
-<h2>About</h2>
-<p>Blög is a tiny blog hosting site.</p>
+<h2><%= t('about-title') %></h2>
+<p><%= t('about-body') %></p>
+<p><%= t('about-note') %></p>
+<%= link_to t('about-translate'), url_for(:locale => t('about-locale')), class: 'btn btn-info' %>
