@@ -19,8 +19,14 @@
             <%= link_to "Edit", edit_user_path(x), class: "text-warning" %>
           </td>
           <td>
-            <%= link_to "Murder", x, method: :delete,
-                data: {confirm: "Are you serious?!"}, class: "text-danger" %>
+            <%= link_to "Murder", x, remote: true, method: :delete,
+              data: {confirm: "Are you serious?!"}, class: "text-danger" %>
+          </td>
+          <!--Help from: http://stackoverflow.com/questions/25336544/why-does-remote-true-and-confirm-are-you-sure-not-work-together-->
+          <td>
+            <%= link_to 'Murder with AJAX', x, method: :delete, remote: true,
+              class: "jns-delete text-danger",
+              data: { confirm: 'Are you sure?' } %>
           </td>
         <% end %>
       </tr>

@@ -19,7 +19,7 @@
 
   <% if @post.image? %>
     <!--Image-->
-    <%= image_tag @post.image.url %>
+    <%= image_tag @post.image.url, class: "img-responsive" %>
   <% end %>
 
   <!--Post content-->
